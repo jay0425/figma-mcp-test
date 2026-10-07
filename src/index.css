@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* Design tokens — names follow the Figma paint/text styles. */
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Text", ui-serif, Georgia, serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-rethink: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-reddit-mono: "Reddit Mono", ui-monospace, monospace;
+
+  --color-accent-1: #485c11; /* Accent/Accent 1 — linkout button */
+  --color-accent-2: #dfecc6; /* Accent/Accent 2 — primary button */
+  --color-accent-3: #8e9c78; /* Accent/Accent 3 — button hover */
+  --color-accent-5: #6f6f6f; /* Accent/Accent 5 — competitor names */
+  --color-accent-6: #929292; /* Accent/Accent 6 — strong dividers, stats */
+  --color-paragraph: #6f6f6f; /* Text/Paragraph */
+  --color-caption: #485c11; /* Text/Captions */
+  --color-divider: #e9e9e9; /* Dividers/Divider 1 */
+  --color-mid-green: #8e9c78; /* Mid Green */
+}
+
+/*
+ * Text styles. Mobile values are the base; tablet starts at 48rem (768px)
+ * and desktop at 64rem (1024px), matching the md / lg breakpoints.
+ */
+@utility type-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 76px;
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  @media (width >= 48rem) {
+    font-size: 140px;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+  }
+  @media (width >= 64rem) {
+    font-size: 160px;
+    line-height: 0.85;
+  }
+}
+
+@utility type-h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  @media (width >= 48rem) {
+    font-size: 54px;
+    line-height: 0.9;
+  }
+  @media (width >= 64rem) {
+    font-size: 60px;
+  }
+}
+
+@utility type-h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  @media (width >= 48rem) {
+    font-size: 40px;
+  }
+  @media (width >= 64rem) {
+    line-height: 1.05;
+  }
+}
+
+@utility type-h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+@utility type-stat {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  @media (width >= 48rem) {
+    font-size: 80px;
+  }
+}
+
+@utility type-paragraph {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+@utility type-link {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+@utility type-caption {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  @media (width >= 48rem) {
+    font-size: 11px;
+    letter-spacing: -0.01em;
+  }
+  @media (width >= 64rem) {
+    font-size: 12px;
+  }
+}
+
+@utility type-logo {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+@layer base {
+  html {
+    background-color: #fff;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    font-family: var(--font-sans);
+    /* Figma sets DM Sans' optical size axis to 14 for every text style. */
+    font-variation-settings: "opsz" 14;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
